@@ -32,7 +32,7 @@ export default {
 	},
 	async asyncData({route, app, error}) {
 		try {
-		    const item = await app.$axios.$get(`https://api.openweathermap.org/data/2.5/weather?q=${route.params.name},jp&units=metric&lang=ja&appid=process.env.WEATHER_API_KEY`)
+		    const item = await app.$axios.$get(`https://api.openweathermap.org/data/2.5/weather?q=${route.params.name},jp&units=metric&lang=ja&appid=${process.env.WEATHER_API_KEY}`)
 
 		    let weather = "";
 
@@ -51,6 +51,9 @@ export default {
 					break;
 				case "Snow":
 					weather = "雪";
+					break;
+				default:
+					weather = item.weather[0].main;
 					break;
 			}
 
