@@ -14,7 +14,7 @@
 	  </nav>
 	  <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
 			<div class="container">
-				<ul v-if="city_name != null">
+				<ul class="navbar-item" v-if="city_name != null">
 				    <li>
 				    	<nuxt-link to="/">HOME</nuxt-link>
 				    </li>
