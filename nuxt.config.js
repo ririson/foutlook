@@ -1,4 +1,7 @@
 
+require('dotenv').config();
+const { WEATHER_API_KEY } = process.env;
+
 export default {
   mode: 'universal',
   /*
@@ -40,7 +43,10 @@ export default {
   modules: [
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
+    '@nuxtjs/axios',
   ],
+  axios: {
+  },
   /*
   ** Build configuration
   */
@@ -57,5 +63,8 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  env: {
+    WEATHER_API_KEY
   }
 }
